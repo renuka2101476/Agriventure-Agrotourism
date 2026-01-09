@@ -39,7 +39,5 @@ This project helps:
 - Visual Studio Code
 - Git & GitHub
 
----
 
-## 📂 Project Structure
 
