@@ -1,0 +1,29 @@
+
+<br><br><br>
+  <div class="container" style="border: 3px solid black; margin-left: 10%; margin-right: 10%;">
+    <br><br>
+    <h1 style="text-align: center;">Update image</h1>
+    <br><br>
+    <form (ngSubmit)="onSubmit()" #imageForm="ngForm" style="margin-left: 10%; margin-right: 10%;">
+      <div class="form-group">
+        <label for="id">Gallery ID</label>
+        <label id="id" class="form-control">{{ imageId }}</label>
+      </div><br>
+      <div class="form-group">
+        <label for="imageData">Image</label>
+        <input type="file" id="file" (change)="onFileSelected($event)" name="image" ngModel #fileInput="ngModel" required>
+        <div *ngIf="fileInput.invalid && (fileInput.dirty || fileInput.touched)" class="text-danger">
+          <div *ngIf="fileInput.errors?.['required']">Field is empty, please choose an image.</div>
+        </div>
+      </div><br>
+      <button type="submit" [disabled]="!imageForm.form.valid" style="height: 10%; width: 20%;">Update</button>
+    </form>
+    <div *ngIf="showSuccessMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+    <br><br><br><br>
+  </div><br><br>
+  
+  
+  
+  <router-outlet></router-outlet>

@@ -1,0 +1,121 @@
+
+
+
+   <!-- <section class="intro">
+    <div class="container mt-5">
+      <h3 class="text-center">Add New Tour Package</h3>
+      <div class="card shadow-2-strong mt-4">
+        <div class="card-body">
+          <form (ngSubmit)="addPackage()">
+            <div class="mb-3">
+              <label for="packageName" class="form-label">Package Name</label>
+              <input type="text" id="packageName" [(ngModel)]="newPackage.packageName" name="packageName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="packagePrice" class="form-label">Package Price</label>
+              <input type="text" id="packagePrice" [(ngModel)]="newPackage.packagePrice" name="packagePrice" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="packageDescription" class="form-label">Package Description</label>
+              <textarea id="packageDescription" [(ngModel)]="newPackage.packageDescription" name="packageDescription" class="form-control" required></textarea>
+            </div> -->
+
+            <!-- <div *ngFor="let activity of newPackage.activitiesName; let i = index" class="mb-3">
+              <label class="form-label">Activity {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <input type="text" [(ngModel)]="activity.activityName" name="activityName{{i}}" class="form-control" placeholder="Activity Name" required>
+                <input type="text" [(ngModel)]="activity.activityDescription" name="activityDescription{{i}}" class="form-control" placeholder="Activity Description" required>
+                <button type="button" class="btn btn-danger" (click)="removeActivity(i)">Remove</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-secondary mb-3" (click)="addActivity()">Add Activity</button> -->
+
+
+              
+            <!-- <div *ngFor="let activity of newPackage.activitiesName; let i = index" class="mb-3">
+              <label class="form-label">Activity {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <select [(ngModel)]="activity.activityId" (change)="selectActivity(activity, $event)" name="activityId{{i}}" class="form-control" required>
+                  <option *ngFor="let act of allActivities" [value]="act.activityId">{{act.activityName}}</option>
+                </select>
+                <button type="button" class="btn btn-danger" (click)="removeActivity(i)">Remove</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-secondary mb-3" (click)="addActivity()">Add Activity</button>
+            <button type="submit" class="btn btn-primary">Add Package</button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .intro {
+      padding-top: 20px;
+    }
+    .card {
+      margin-top: 20px;
+    }
+  </style>  -->
+  
+
+
+
+
+  <section class="vh-100 bg-image" style="background-image: url('https://gttp.imgix.net/288331/x/0/kahariam-farms.jpg?ar=1.91:1&w=1200&fit=crop');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-4">
+                <h3 class="text-uppercase text-center mb-5">
+                  <b style="font-size: larger; font-family:Georgia, 'Times New Roman', Times, serif;">Add New Tour Package</b>
+                </h3>
+  
+                <form (ngSubmit)="addPackage()">
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <label for="packageName" class="form-label">Package Name</label>
+                    <input type="text" id="packageName" [(ngModel)]="newPackage.packageName" name="packageName" class="form-control form-control-lg" required>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <label for="packagePrice" class="form-label">Package Price</label>
+                    <input type="text" id="packagePrice" [(ngModel)]="newPackage.packagePrice" name="packagePrice" class="form-control form-control-lg" required>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <label for="packageDescription" class="form-label">Package Description</label>
+                    <textarea id="packageDescription" [(ngModel)]="newPackage.packageDescription" name="packageDescription" class="form-control form-control-lg" required></textarea>
+                  </div>
+  
+                  <div *ngFor="let activity of newPackage.activitiesName; let i = index" class="mb-3">
+                    <label class="form-label">Activity {{i + 1}}</label>
+                    <div class="input-group mb-2">
+                      <select [(ngModel)]="activity.activityId" (change)="selectActivity(activity, $event)" name="activityId{{i}}" class="form-control form-control-lg" required>
+                        <option *ngFor="let act of allActivities" [value]="act.activityId">{{act.activityName}}</option>
+                      </select>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="removeActivity(i)">Remove</button>
+                    </div>
+                  </div>
+                  
+                  <button type="button" class="btn btn-secondary mb-3" (click)="addActivity()">Add Activity</button>
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add Package</button>
+                  </div>
+                </form>
+  
+                <div *ngIf="showSuccessMessage" class="alert alert-success mt-3">
+                  Package has been added successfully.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  

@@ -1,0 +1,22 @@
+<div class="container-fluid text-center position-relative mt-5">
+    <div class="content">
+        <h2 class="h2activities text-black">Activities To do</h2>
+        <hr class="hr-line1"> 
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let img of images | async">
+                <div class="card mb-3">
+                    <img [src]="'data:image/jpeg;base64,' + img.image" class="card-img-top custom-img" alt="{{ img.activityName }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center" style="color: red;">{{ img.activityName }}</h5>
+                        <p class="card-text">{{ img.activityDescription }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

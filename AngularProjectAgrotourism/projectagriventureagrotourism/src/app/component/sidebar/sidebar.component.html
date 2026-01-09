@@ -1,0 +1,109 @@
+<!--<nav class="nav flex-column">
+  <div>
+      <a class="navbar-brand" href="#"><img class="navbar-brand" src="assets/images/AGRIVENTURE4.png" alt="logo" /></a>
+  </div>  
+  <a class="nav-link active" routerLink="/dashboard">Dashboard</a>
+  <a class="nav-link" routerLink="/activities">Activities</a>
+  <a class="nav-link" routerLink="/gallery">Gallery</a>
+  <a class="nav-link" routerLink="/tour-package">Tour Package</a>
+  <a class="nav-link" routerLink="/guide">Guide</a>
+  <a class="nav-link" routerLink="/booking">Booking</a>
+  <a class="nav-link" routerLink="/invoice">Invoice</a>
+  <a class="nav-link" routerLink="/feedback-review">Feedback Review</a>
+  <a class="nav-link" routerLink="/living-home">Living Home</a>
+  <a class="nav-link" routerLink="/all-admins">All Admins</a>  navbar navbar-expand-lg navbar-light bg-light
+  <a class="nav-link" routerLink="/alguide">All Guides</a>  navbar navbar-dark bg-dark
+</nav>-->
+
+                <!--fixed-top-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #4b2d01; height: 20%; ">
+  <div>
+    <a class="navbar-brand" href="#"><img class="navbar-image" src="assets/images/AGRIVENTURE4.png" alt="logo" style="margin-left: 20%;"/></a>
+  </div> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav" color="#ebe1e1">
+      <li class="nav-item"> 
+        <a class="nav-link" routerLink="/adminprofile">AdminProfile</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Activities
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/allactivities">GetAllActivities</a>
+          <a class="dropdown-item" routerLink="/addactivity">AddActivity</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gallery
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/allgallery">GetAllGallery</a>
+          <a class="dropdown-item" routerLink="/addgallery">AddGallery</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/booking">Booking</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/invoice">Invoice</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/allfeedbackreview">Feedback Review</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Living Home
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/allhome">GetAllHome</a>
+          <a class="dropdown-item" routerLink="/addhome">AddHome</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Tour-Package
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/allpackage">GetAllPackage</a>
+          <a class="dropdown-item" routerLink="/addpackage">AddPackage</a>
+        </div>
+      </li>
+     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Guide
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/getalguide">GetAllGuide</a>
+          <a class="dropdown-item" routerLink="/addguide">AddGuide</a>
+        </div>
+      </li> 
+      <!-- <li class="nav-item">
+        <a class="nav-link" routerLink="/all-admins">All Admins</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/allcontact">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<body>
+  <div style="text-align: center;">
+    <br><br><br><br><br><br><br><br>
+    <h3>Admin Portal</h3>
+    <br><br><br>
+    <h1>Welcome to Agriventure Agrotourism</h1>
+  </div>
+</body>
+
+
+
+
+
+<router-outlet></router-outlet>

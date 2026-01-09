@@ -1,0 +1,150 @@
+
+  
+ 
+  <!-- <div class="container">
+    <h1>Add Guide</h1>
+    <form (ngSubmit)="onSubmit(guideForm)" #guideForm="ngForm">
+      
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          class="form-control" 
+          [(ngModel)]="guide.guideName" 
+          name="name" 
+          required 
+          #name="ngModel"
+        >
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+          <div *ngIf="name.errors?.['required']">
+            Name is required.
+          </div>
+        </div>
+      </div>
+  
+   
+      <div class="form-group">
+        <label for="phone">Mobile No.</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          class="form-control" 
+          [(ngModel)]="guide.guideMoNo" 
+          name="phone" 
+          pattern="[0-9]{10}" 
+          required 
+          #phone="ngModel"
+        >
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger">
+          <div *ngIf="phone.errors?.['required']">
+            Mobile number is required.
+          </div>
+          <div *ngIf="phone.errors?.['pattern']">
+            Mobile number must be 10 digits long.
+          </div>
+        </div>
+      </div>
+  
+     
+      <div class="form-group">
+        <label for="mail">Email-ID</label>
+        <input 
+          type="email" 
+          id="mail" 
+          class="form-control" 
+          [(ngModel)]="guide.guideEmail" 
+          name="mail" 
+          required 
+          email 
+          #mail="ngModel"
+        >
+        <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="text-danger">
+          <div *ngIf="mail.errors?.['required']">
+            Email is required.
+          </div>
+          <div *ngIf="mail.errors?.['email']">
+            Invalid email address.
+          </div>
+        </div>
+      </div>
+  
+ 
+      <div *ngIf="showSuccessMessage" class="alert alert-success">
+        Guide has been added successfully, Now Guide will be available for Customer Booking.
+      </div>
+  
+ 
+      <button type="submit" class="btn btn-primary">
+        Add Guide
+      </button>
+    </form>
+  </div> -->
+  
+  
+
+
+
+
+
+ <section class="vh-100 bg-image"
+  style="background-image: url('https://gttp.imgix.net/288331/x/0/kahariam-farms.jpg?ar=1.91:1&w=1200&fit=crop');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card " style="border-radius: 15px;">
+            <div class="card-body p-4">
+              <h3 class="text-uppercase text-center mb-5">
+                <b style="font-size: larger; font-family:Georgia, 'Times New Roman', Times, serif;">Add Guide</b>
+              </h3>
+
+              <form (ngSubmit)="onSubmit(guideForm)" #guideForm="ngForm">
+                
+                <!-- Name Field -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <label class="form-label" for="name">Name</label>
+                  <input type="text" id="name" name="name" [(ngModel)]="guide.guideName" required #name="ngModel" class="form-control form-control-lg" />
+                  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                    <div *ngIf="name.errors?.['required']">Name is required.</div>
+                  </div>
+                </div>
+
+                <!-- Mobile No. Field -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <label class="form-label" for="phone">Mobile No.</label>
+                  <input type="tel" id="phone" name="phone" [(ngModel)]="guide.guideMoNo" pattern="[0-9]{10}" required #phone="ngModel" class="form-control form-control-lg" />
+                  <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger">
+                    <div *ngIf="phone.errors?.['required']">Mobile number is required.</div>
+                    <div *ngIf="phone.errors?.['pattern']">Mobile number must be 10 digits long.</div>
+                  </div>
+                </div>
+
+                <!-- Email-ID Field -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <label class="form-label" for="mail">Email-ID</label>
+                  <input type="email" id="mail" name="mail" [(ngModel)]="guide.guideEmail" required #mail="ngModel" class="form-control form-control-lg" />
+                  <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="text-danger">
+                    <div *ngIf="mail.errors?.['required']">Email is required.</div>
+                    <div *ngIf="mail.errors?.['email']">Invalid email address.</div>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-flex justify-content-center">
+                  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add Guide</button>
+                </div>
+
+                <!-- Success Message -->
+                <div *ngIf="showSuccessMessage" class="alert alert-success">
+                  Guide has been added successfully, Now Guide will be available for Customer Booking.
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

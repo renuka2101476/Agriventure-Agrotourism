@@ -1,0 +1,28 @@
+.nav {
+    background-color: #da0606; /* Sidebar background color */
+    padding: 10px;
+    height: 100vh; /* Full height */
+}
+
+.nav-link {
+    color: #fff; /* Font color */
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #585757; /* Hover background color */
+}
+
+.navbar-brand img {
+    width: 80px; /* Adjust as needed */
+    height: 70px;
+}
+
+.navbar-nav .nav-link {
+    color: #4adf25;
+  }
+
+  .navbar-image {
+    box-shadow: 3px 3px 3px rgba(85, 146, 46, 0.3); /* Adjust the values as needed */
+  }

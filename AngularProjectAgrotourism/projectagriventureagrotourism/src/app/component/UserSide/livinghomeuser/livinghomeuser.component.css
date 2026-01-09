@@ -1,0 +1,35 @@
+.intro .bg-image {
+    position: relative;
+  }
+  .intro .mask {
+    padding: 20px;
+  }
+  .table-responsive {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  .alert {
+    margin: 20px 0;
+  }
+  .card-title {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .h2activities {
+    font-family: Courier, monospace;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 8%;
+    font-weight: bold;
+    color: #080107;
+  }
+
+  .hr-line1 {
+    width: 19%;
+    text-align: center;
+    margin: auto;
+    border-top: 2px solid #333;
+    font-weight: bold;
+  }

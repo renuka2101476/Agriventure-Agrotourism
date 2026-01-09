@@ -1,0 +1,251 @@
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <div class="form-header">
+              <h1>Make your Booking</h1>
+            </div>
+            <form (ngSubmit)="saveBooking()">
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="Name" [(ngModel)]="newBooking.custName" name="custName" required>
+                <span class="form-label">Name</span>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="email" placeholder="Enter your Email" [(ngModel)]="newBooking.custEmail" name="custEmail" required>
+                    <span class="form-label">Email</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="tel" placeholder="Enter your Phone" [(ngModel)]="newBooking.custMoNo" name="custMoNo" required>
+                    <span class="form-label">Phone</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="date" [(ngModel)]="newBooking.bookingDate" name="bookingDate" required>
+                    <span class="form-label">Date</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="number" placeholder="Enter number of people" [(ngModel)]="newBooking.totalMembers" name="totalMembers" (change)="calculateBookingAmt()" required>
+                    <span class="form-label">People</span>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" [(ngModel)]="newBooking.guide" name="guide" required>
+                      <option value="" disabled selected >Select Guide</option>
+                      <option *ngFor="let guide of allGuides" [ngValue]="guide">{{guide.guideName}}</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Guide</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" [(ngModel)]="newBooking.tourPackage" name="tourPackage" (change)="calculateBookingAmt()" required>
+                      <option value="" disabled selected >Select Package</option>
+                      <option *ngFor="let tourPackage of allTourPackages" [ngValue]="tourPackage">{{tourPackage.packageName}}</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Package</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" [(ngModel)]="newBooking.liveHome" name="liveHome" (change)="calculateBookingAmt()" required>
+                      <option value="" disabled selected >Select HomeType</option>
+                      <option *ngFor="let liveHome of allLivingHomes" [ngValue]="liveHome">{{liveHome.homeType}}</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Home</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <input class="form-control" type="text" [(ngModel)]="newBooking.bookingAmt" placeholder="Amount" name="bookingAmt" readonly>
+                <span class="form-label">Booking Amount</span>
+              </div>
+              <div class="form-btn">
+                <button class="submit-btn" type="button"  (click)="initiatePayment()">Make Payment</button>
+              </div>
+              
+            </form> -->
+            
+            <!-- QR Code -->
+            <!-- <br><br>
+            <div *ngIf="paymentUrl">
+            <div style="margin-left: 35%;" >
+              <qrcode [qrdata]="paymentUrl"  errorCorrectionLevel="M"></qrcode>
+              <p style="margin-left: 6%; color: white;">Scan the QR code to pay</p> -->
+              <!-- <a [href]="paymentUrl">Or click here to pay via UPI</a> -->
+              <!-- <br>
+            </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <button class="submit-btn" type="button" (click)="saveBooking()">Save</button>
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <button class="submit-btn" type="button" (click)="downloadReceipt()">Download Receipt</button>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+ 
+  </div>
+  </div>
+  </div>
+  </div>
+  </div> -->
+
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <div class="form-header">
+              <h1>Make your Booking</h1>
+            </div>
+            <form (ngSubmit)="saveBooking()" #bookingForm="ngForm">
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="Name" [(ngModel)]="newBooking.custName" name="custName" required #custName="ngModel">
+                <span class="form-label">Name</span>
+                <div *ngIf="custName.invalid && (custName.dirty || custName.touched)" class="text-danger">
+                  Name is required.
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="email" placeholder="Enter your Email" [(ngModel)]="newBooking.custEmail" name="custEmail" required email #custEmail="ngModel">
+                    <span class="form-label">Email</span>
+                    <div *ngIf="custEmail.invalid && (custEmail.dirty || custEmail.touched)" class="text-danger">
+                      Valid email is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="tel" placeholder="Enter your Phone" [(ngModel)]="newBooking.custMoNo" name="custMoNo" required pattern="^\d{10}$" #custMoNo="ngModel">
+                    <span class="form-label">Phone</span>
+                    <div *ngIf="custMoNo.invalid && (custMoNo.dirty || custMoNo.touched)" class="text-danger">
+                      Valid 10-digit phone number is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="date" [(ngModel)]="newBooking.bookingDate" name="bookingDate" required #bookingDate="ngModel">
+                    <span class="form-label">Date</span>
+                    <div *ngIf="bookingDate.invalid && (bookingDate.dirty || bookingDate.touched)" class="text-danger">
+                      Booking date is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" type="number" placeholder="Enter number of people" [(ngModel)]="newBooking.totalMembers" name="totalMembers" (change)="calculateBookingAmt()" required min="1" #totalMembers="ngModel">
+                    <span class="form-label">People</span>
+                    <div *ngIf="totalMembers.invalid && (totalMembers.dirty || totalMembers.touched)" class="text-danger">
+                      At least one person is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" [(ngModel)]="newBooking.guide" name="guide" required #guide="ngModel">
+                      <option value="" disabled selected>Select Guide</option>
+                      <option *ngFor="let guide of allGuides" [ngValue]="guide">{{guide.guideName}}</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Guide</span>
+                    <div *ngIf="guide.invalid && (guide.dirty || guide.touched)" class="text-danger">
+                      Guide selection is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" [(ngModel)]="newBooking.tourPackage" name="tourPackage" (change)="calculateBookingAmt()" required #tourPackage="ngModel">
+                      <option value="" disabled selected>Select Package</option>
+                      <option *ngFor="let tourPackage of allTourPackages" [ngValue]="tourPackage">{{tourPackage.packageName}}</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Package</span>
+                    <div *ngIf="tourPackage.invalid && (tourPackage.dirty || tourPackage.touched)" class="text-danger">
+                      Package selection is required.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" [(ngModel)]="newBooking.liveHome" name="liveHome" (change)="calculateBookingAmt()" required #liveHome="ngModel">
+                      <option value="" disabled selected>Select HomeType</option>
+                      <option *ngFor="let liveHome of allLivingHomes" [ngValue]="liveHome">{{liveHome.homeType}}</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Home</span>
+                    <div *ngIf="liveHome.invalid && (liveHome.dirty || liveHome.touched)" class="text-danger">
+                      Home selection is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" [(ngModel)]="newBooking.bookingAmt" placeholder="Amount" name="bookingAmt" readonly>
+                <span class="form-label">Booking Amount</span>
+              </div>
+              <div class="form-btn">
+                <button class="submit-btn" type="button" (click)="initiatePayment()" [disabled]="bookingForm.invalid">Make Payment</button>
+              </div>
+            </form>
+  
+            <!-- QR Code -->
+            <br><br>
+            <div *ngIf="paymentUrl">
+              <div style="margin-left: 35%;">
+                <qrcode [qrdata]="paymentUrl" errorCorrectionLevel="M"></qrcode>
+                <p style="margin-left: 6%; color: white;">Scan the QR code to pay</p>
+                <br>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <button class="submit-btn" type="button" (click)="saveBooking()">Save</button>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <button class="submit-btn" type="button" (click)="downloadReceipt()">Download Receipt</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

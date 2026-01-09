@@ -1,0 +1,51 @@
+
+
+<br><br>
+  
+  
+  <div class="panel panel-primary" style="text-align: center; border: 3px solid black; margin-left: 10%; margin-right: 10%">
+    <div class="panel-heading"> <br>
+      <h2 >Gallery List</h2>
+    </div>
+    <div style="margin-left: 60%;">
+      <b style="font-size: 12px;">Search Gallery-Image here...</b><i class="fa fa-search"></i><br>
+      <input type="text" name="txt" id="txt" placeholder="Enter Image ID" [(ngModel)]="searchText" (input)="onInputChange()" style="font-size: 15px;">
+    </div>
+    <br><br>
+  
+    <div class="panel-body" style="margin-left: 7%; margin-right: 7%;">
+      <div *ngIf="noData" class="alert alert-warning">
+        Data not Available
+      </div>
+      <table class="table table-striped" *ngIf="!noData">
+        <thead>
+          <tr>
+            <th>Gallery-ID</th>
+            <th>Gallery-Image</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let g of filteredGallery | async">
+            <td>{{ g.imageId }}</td>
+            <td>
+              <img [src]="'data:image/jpeg;base64,' + g.image" alt="Error in Gallery Photos" style="max-width: 200px; max-height: 200px;">
+            </td>
+            <td>
+              <button (click)="deleteGallery(g.imageId)" class="btn btn-danger btn-sm" style="margin-top: 30px; margin-left: 10px;">
+                <i class="fa fa-trash"></i>
+              </button>
+                <br>
+              <button (click)="navigateToUpdate(g.imageId)" class="btn btn-primary btn-sm" style="margin-top: 15px; margin-left: 10px;">
+                <i class="fa fa-edit"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table><br>
+    </div>
+  </div><br><br>
+  
+
+  <router-outlet></router-outlet>

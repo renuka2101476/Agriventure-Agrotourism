@@ -1,0 +1,48 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg-image {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  }
+  
+  .mask {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  
+  .gradient-custom-3 {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  .form-outline {
+    margin-bottom: 20px;
+  }
+  
+  .text-body {
+    color: #ffffff !important;
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+
+
+  .gradient-custom-4 {
+
+    background: #3a5c46;
+    
+
+    background: -webkit-linear-gradient(to right, rgb(149, 221, 176), rgb(129, 182, 209));
+    
+
+    background: linear-gradient(to right, rgb(123, 201, 151), rgb(148, 214, 245))
+    } 
+  

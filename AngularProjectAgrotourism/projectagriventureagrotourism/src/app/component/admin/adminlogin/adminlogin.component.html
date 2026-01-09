@@ -1,0 +1,96 @@
+<!-- <div class="background-container">
+    <p>adminlogin works!</p>
+  </div> -->
+
+
+
+<!-- <body style="background-image: url('https://gttp.imgix.net/288331/x/0/kahariam-farms.jpg?ar=1.91:1&w=1200&fit=crop');">
+    <h1 class="text-center mb-4">Welcome to AgriventureAgrotourism</h1>
+    <div class="window">
+        <span class="h1">Sign In</span>
+        <form>
+            <input type="email" class="mt-4 form-control" placeholder="Your email">
+            <input type="password" class="mt-2 form-control" placeholder="Your password">
+            <input type="submit" class="mb-2 btn btn-light mt-2" value="Sign In">
+            <small>You do not have an account? <a href="#" class="text-warning">Sign up</a></small>
+        </form>
+    </div>
+</body> -->
+
+
+
+
+<!-- <body>
+    <h1 class="text-left top-left-corner">Admin Portal</h1>
+    <div class="background">
+        
+        <h1 class="text-center mb-4 header"><b>Welcome to <br>Agriventure Agrotourism</b></h1>
+        <div class="window">
+            <span class="h1">Sign In</span>
+            <form (ngSubmit)="onSubmit()">
+                <input type="text" class="mt-4 form-control" id="username" [(ngModel)]="adminUserName" name="username" placeholder="Username" required>
+                <input type="password" class="mt-2 form-control" id="password" [(ngModel)]="adminPassword" name="password" placeholder="Password" required>
+                <input type="submit" class="mb-2 btn btn-light mt-2" value="Sign In">-->
+                <!-- <small>You do not have an account? <a href="#" class="text-warning">Sign up</a></small> -->
+            <!--</form>
+        </div>
+    </div>
+</body> -->
+
+
+<!-- <body *ngIf="showLoginForm">
+    <div >
+    <h1 class="text-left top-left-corner">Admin Portal</h1>
+    <div class="background" [ngClass]="{'hidden': !showLoginForm}">
+        <h1 class="text-center mb-4 header"><b>Welcome to <br>Agriventure Agrotourism</b></h1>
+        
+        <div  class="window">
+            <span class="h1">Sign In</span>
+            <form (ngSubmit)="onSubmit()">
+                <input type="text" class="mt-4 form-control" id="username" [(ngModel)]="adminUserName" name="username" placeholder="Username" required>
+                <input type="password" class="mt-2 form-control" id="password" [(ngModel)]="adminPassword" name="password" placeholder="Password" required>
+                <input type="submit" (click)="toggleSidebar()" class="mb-2 btn btn-light mt-2" value="Sign In">
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+
+
+
+   
+      <app-sidebar *ngIf="!showLoginForm"></app-sidebar> -->
+
+   
+
+      <body *ngIf="showLoginForm">
+        <div>
+          <h1 class="text-left top-left-corner" style="background-color: rgba(37, 29, 29, 0.5);
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 20px;">Admin Portal</h1>
+          <!-- <div>
+            <img class="navbar-image" src="assets/images/AGRIVENTURE4.png" alt="logo" style="height: 20%; width: 20%;"/>
+          </div>  -->
+          <div class="background" [ngClass]="{'hidden': !showLoginForm}">
+            <h1 class="text-center mb-4 header"><b>Welcome to <br>Agriventure Agrotourism</b></h1>
+      
+            <div class="window">
+              <span class="h1">Sign In</span>
+              <div><img src="https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Picture.png" style="height: 80px; width: 80px;"/></div>
+              <form (ngSubmit)="onSubmit()">
+                <input type="text" class="mt-4 form-control" id="username" [(ngModel)]="adminUserName" name="username" placeholder="Username" required>
+                <input type="password" class="mt-2 form-control" id="password" [(ngModel)]="adminPassword" name="password" placeholder="Password" required>
+                <input type="submit" class="mb-2 btn btn-light mt-2" value="Sign In">
+                <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p> <!-- Show error message -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </body>
+      
+      <app-sidebar *ngIf="!showLoginForm"></app-sidebar>
+      
+
+   

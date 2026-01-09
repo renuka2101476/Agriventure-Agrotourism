@@ -1,0 +1,78 @@
+<br><br><br><br>
+  <div class="container">
+    <h1>Update Guide</h1>
+    <form [formGroup]="guideForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="id">Guide ID</label>
+        <label id="id" class="form-control">{{ guideForm.get('guideId')?.value }}</label>
+        <div *ngIf="guideForm.get('guideId')?.invalid && (guideForm.get('guideId')?.dirty || guideForm.get('guideId')?.touched)" class="text-danger">
+          <div *ngIf="guideForm.get('guideId')?.errors?.['required']">
+            Guide ID is required.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <label id="name" class="form-control">{{ guideForm.get('guideName')?.value }}</label>
+        <div *ngIf="guideForm.get('guideName')?.invalid && (guideForm.get('guideName')?.dirty || guideForm.get('guideName')?.touched)" class="text-danger">
+          <div *ngIf="guideForm.get('guideName')?.errors?.['required']">
+            Name is required.
+          </div>
+        </div>
+      </div>
+  
+
+      <div class="form-group">
+        <label for="phone">Mobile No.</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          class="form-control" 
+          formControlName="guideMoNo" 
+          pattern="[0-9]{10}"
+        >
+        <div *ngIf="guideForm.get('guideMoNo')?.invalid && (guideForm.get('guideMoNo')?.dirty || guideForm.get('guideMoNo')?.touched)" class="text-danger">
+          <div *ngIf="guideForm.get('guideMoNo')?.errors?.['required']">
+            Mobile number is required.
+          </div>
+          <div *ngIf="guideForm.get('guideMoNo')?.errors?.['pattern']">
+            Mobile number must be 10 digits long.
+          </div>
+        </div>
+      </div>
+  
+
+      <div class="form-group">
+        <label for="mail">Email-ID</label>
+        <input 
+          type="email" 
+          id="mail" 
+          class="form-control" 
+          formControlName="guideEmail"
+        >
+        <div *ngIf="guideForm.get('guideEmail')?.invalid && (guideForm.get('guideEmail')?.dirty || guideForm.get('guideEmail')?.touched)" class="text-danger">
+          <div *ngIf="guideForm.get('guideEmail')?.errors?.['required']">
+            Email is required.
+          </div>
+          <div *ngIf="guideForm.get('guideEmail')?.errors?.['email']">
+            Invalid email address.
+          </div>
+        </div>
+      </div>
+  
+  
+      <div *ngIf="showSuccessMessage" class="alert alert-success">
+        Guide details has been updated successfully.
+      </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="guideForm.invalid">
+      Update Guide
+    </button>
+  </form>
+</div>
+
+  

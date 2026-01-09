@@ -1,0 +1,80 @@
+
+  <section class="intro">
+    <div class="bg-image h-100" style="background-image: url('https://gttp.imgix.net/288331/x/0/kahariam-farms.jpg?ar=1.91:1&w=1200&fit=crop'); background-size: cover; background-position: center;">
+      <div class="mask d-flex align-items-start h-100" style="background-color: rgba(0, 0, 0, 0.25); padding: 20px;">
+        <div class="container h-100">
+          <div class="row align-items-center">
+            <div class="col-3">
+              <div class="search-bar">
+                <b style="font-size: 12px; color: rgb(255, 255, 255);">Search Home here...</b><i class="fa fa-search"></i><br>
+                <input type="text" name="txt" id="txt" placeholder="Enter Name or ID" [(ngModel)]="searchText" (input)="onInputChange()" style="font-size: 15px; width: 100%;">
+              </div>
+            </div>
+            <div class="col-6 text-center">
+              <h3 class="card-title text-white"><b style="font-size: larger; font-family:Georgia, 'Times New Roman', Times, serif; background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px; margin-bottom: 20px;">HOUSE LIST</b></h3>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-9">
+              <div class="card bg-dark shadow-2-strong">
+                <div class="card-body">
+                  <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                    <div *ngIf="noData" class="alert alert-warning">
+                      Data not Available
+                    </div>
+                    <table class="table table-dark table-borderless mb-0" *ngIf="!noData">
+                      <thead>
+                        <tr>
+                          <th scope="col">HOME-ID</th>
+                          <th scope="col">HOME-TYPE</th>
+                          <th scope="col">DESCRIPTION</th>
+                          <th scope="col">RENT</th>
+                          <th scope="col">ACTION</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let h of filteredHomes | async">
+                          <th scope="row">{{ h.homeId }}</th>
+                          <td>{{ h.homeType }}</td>
+                          <td class="text-wrap">{{ h.homeDescription }}</td>
+                          <td class="text-wrap">{{ h.homeRent }}</td>
+                          <td>
+                            <button (click)="deleteHome(h.homeId)" class="btn btn-danger btn-sm">
+                              <i class="fa fa-trash"></i>
+                            </button>
+                            <button (click)="navigateToUpdate(h.homeId)" class="btn btn-primary btn-sm" style="margin-left: 10px;">
+                              <i class="fa fa-edit"></i>
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="6" class="text-center">No more data available</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .search-bar {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .intro .bg-image {
+     
+      position: relative;
+    }
+    .intro .mask {
+      padding: 20px;
+    }
+  </style>
+  

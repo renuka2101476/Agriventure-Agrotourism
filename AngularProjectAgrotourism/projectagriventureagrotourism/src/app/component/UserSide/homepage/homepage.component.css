@@ -1,0 +1,377 @@
+/*home video start */
+.banner-video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+.banner-video video {
+    object-fit: cover;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+.text-red{
+    color: rgb(255, 238, 0);
+    text-shadow: 3px 3px 3px #000000;
+}
+.content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+/*home video end */
+
+/*about us page start */
+.about {
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    
+}
+
+.h2class {
+    font-family: Courier, monospace;
+    font-size: 30px;
+    text-align: center;
+   padding-top: 90px;
+    font-weight: bold;
+
+}
+
+.hr-line {
+    width: 15%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    border-top: 2px solid #1e1b1b;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.e1 {
+    
+    font-size: 18px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: black;
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: 1px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/*about us page end*/
+
+
+/*Activities page start */
+.h2activities {
+    font-family: Courier, monospace;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-top: 50px;
+}
+
+.row-cols-md-3 {
+    margin-top: -40px; /* Adjust as needed */
+}
+
+.col
+{
+    margin-bottom: 25px;
+}
+.hr-line1 {
+    width: 20%;
+    margin-bottom: 0; 
+    text-align: center;
+    border-top: 2px solid #333;
+    font-weight: bold;
+}
+
+.card-img-top {
+    border-radius: 50px;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 25px;
+    margin-top: -15px;
+}
+
+.btn-primary {
+    border-radius: 50px;
+    width: 120px;
+}
+
+h5 {
+    color: rgb(255, 17, 17);
+}
+
+
+.custom-button {
+    background-color: rgb(58, 239, 18);
+    border-color: rgb(58, 239, 18);
+    color: rgb(0, 0, 0); 
+    border-radius: 15px; 
+    height: 50px;
+    width: 200px;
+    font-size: 20px; 
+    font-family:cursive;
+    margin-top: -5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; 
+}
+
+.custom-button:hover {
+    background-color: #ff0909; 
+    transform: scale(1.1);
+    border-color: #ff0909; 
+}
+
+/*Activities page end */
+
+
+/*Gallery page start */
+.h2agallery {
+    font-family: Courier, monospace;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  
+  .hr-line5 {
+    width: 12%;
+    text-align: center;
+    margin: auto;
+   padding-bottom: 30px;
+    border-top: 2px solid #333;
+    font-weight: 900px;
+  }
+  
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+.carousel-item
+{
+    padding-bottom: 70px;
+}
+/*Gallery page end */
+
+  
+/*contact us start*/
+.h2contactus {
+    font-family: Courier, monospace;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 70px;
+    font-weight: bold;
+}
+
+.h3info {
+    font-family: Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.hr-line2 {
+    width: 15%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+    border-top: 2px solid #333;
+    font-weight: bold;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact h1 {
+    text-align: center;
+}
+
+.contact .contact-form {
+    width: 50%;
+}
+
+.contact .location {
+    width: 45%;
+}
+
+.contact form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: solid;
+    outline: rgb(0, 0, 0);
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.contact form textarea {
+    resize: none;
+    height: 240px;
+}
+
+.contact form .submit {
+    display: inline-block;
+    font-size: 16px;
+    background: var(--main-color);
+    color: var(--text-color);
+    width: 160px;
+    transition: all .45s ease;
+}
+
+.contact form .submit:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.contact p {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+/*contact us end*/
+
+
+
+/*footer page*/
+
+.custom-links  {
+    font-size: larger; 
+    color: #ffffff; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.custom-links:hover {
+    color: #4adf25;
+    
+}
+
+footer {
+   height: 360px;
+   padding-top: 30px;
+}
+
+.h5des {
+    
+    font-family: Courier New;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.fa {
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    color: black;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+      background-color: lightblue; 
+    transform: scale(1.1);
+  }
+  
+
+  /* .fa-facebook {
+    margin-top: 17px;
+    margin-right: 15px;
+    margin-left: 10px;
+    background: #3B5998;
+    color: white;
+  } */
+
+
+.fa-instagram {
+    margin-top: 17px;
+    margin-right: 15px;
+    margin-left: 15px ;
+    background: #ff2cb9;
+    color: white;
+  }
+
+  .fa-whatsapp
+  {
+    margin-top: 17px;
+    background: #19ff71;
+    color: white;
+  }
+
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+    footer {
+        height: 700px; 
+    }
+
+   .name{
+    margin-top: -50px;
+    padding-left: 50px;
+    }
+    .my-2  {
+        padding-left: 150px;
+    }
+
+    .logos
+    {
+        margin-left: 120px;
+    }
+}

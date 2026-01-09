@@ -1,0 +1,45 @@
+<!--<div class="container">
+    <h1>All Admins</h1>-->
+    <!-- Add admin management functionality here -->
+  <!--</div>-->
+  
+
+
+<br><br><br><br><br>
+  <div class="panel panel-primary">
+    <div class="panel-heading"> 
+        <h2>Admin List</h2>
+    </div>
+
+    <div class="panel-body">
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Admin-ID</th>
+                <th>Admin-Name</th>
+                <th>Admin-PhoneNo</th>
+                <th>Admin-Email</th>
+                <th>Admin-UserName</th>
+                <th>Admin-Password</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let a of admins | async">
+                <td>{{a.adminId}}</td>
+                <td>{{a.adminName}}</td>
+                <td>{{a.adminPhoneNo}}</td>
+                <td>{{a.adminEmail}}</td>
+                <td>{{a.adminUserName}}</td>
+                <td>{{a.adminPassword}}</td>
+               <!-- <td>
+                  <button (click)="deletePlayer(p.playerId)" class="btn btn-danger">Delete</button>
+                  <button (click)="findPlayer(p.playerId)" class="btn btn-info" style="margin-left: 10px">Search</button>
+                  <button class="btn btn-info" style="margin-left: 10px">Edit</button>
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

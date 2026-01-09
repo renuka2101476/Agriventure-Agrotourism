@@ -1,0 +1,95 @@
+<!-- <section class="intro">
+      <div class="mask d-flex align-items-start h-100" style="background-color: rgba(255, 253, 253, 0.25); padding: 20px;">
+        <div class="container h-100">
+          <div class="row align-items-center">
+            <br><br><br><br><br><br><br>
+            <div class="col-12 text-center">
+                <div class="content">
+                    <h2 class="h2activities text-black">Packages</h2>
+                    <hr class="hr-line1"> 
+                </div>
+            </div><br><br>
+          </div>
+          <div class="row justify-content-center">
+            <div *ngIf="noData" class="alert alert-warning">
+              Data not Available
+            </div>
+            <div *ngIf="!noData" class="row">
+              <div *ngFor="let p of filteredPackage | async" class="col-md-4 mb-4">
+                <div class="card bg-dark text-white">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ p.packageName }}</h5>
+                    <p class="card-text"><b>Price:</b> {{ p.packagePrice }}</p>
+                    <p class="card-text"><b>Description:</b> {{ p.packageDescription }}</p>
+                    <p class="card-text"><b>Activities:</b></p>
+                    <ul>
+                      <li *ngFor="let activity of p.activitiesName">
+                        {{ activity.activityName }} - {{ activity.activityDescription }}
+                      </li>
+                    </ul>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="noData">
+              <p class="text-center text-white">No more data available</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+ -->
+
+
+
+
+
+ <section class="intro">
+  <div class="mask d-flex align-items-start h-100" style="background-color: rgba(255, 255, 255, 0.25); padding: 20px;">
+    <div class="container h-100">
+      <div class="row justify-content-center">
+        <br><br><br><br><br><br><br><br>
+        <div class="col-12 text-center">
+          <div class="content">
+            <h2 class="h2activities text-black">Packages</h2>
+            <hr class="hr-line1">
+          </div>
+        </div>
+        <br><br>
+        <div class="col-12">
+          <div class="card bg-dark shadow-2-strong">
+            <div class="card-body">
+              <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                <div *ngIf="noData" class="alert alert-warning">
+                  Data not Available
+                </div>
+                <div *ngIf="!noData" class="row">
+                  <div *ngFor="let p of filteredPackage | async" class="col-md-4 mb-4">
+                    <div class="card bg-dark text-white h-100">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ p.packageName }}</h5>
+                        <p class="card-text"><b>Price:</b> {{ p.packagePrice }}</p>
+                        <p class="card-text"><b>Description:</b> {{ p.packageDescription }}</p>
+                        <p class="card-text"><b>Activities:</b></p>
+                        <ul>
+                          <li *ngFor="let activity of p.activitiesName">
+                            {{ activity.activityName }} - {{ activity.activityDescription }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="noData">
+                  <p class="text-center text-white">No more data available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

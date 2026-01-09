@@ -1,0 +1,26 @@
+
+
+<br><br><br><br>
+<div class="container" style="border: 3px solid black; margin-left: 10%; margin-right: 20%;">
+ <div style=" text-align: center;"><br><h1 >Add Gallery Image</h1><br><br><br><br>
+  <form (ngSubmit)="onSubmit()" #imageForm="ngForm">
+    <div class="form-group" style=" text-align: center;">
+      <label for="imageData"> Image</label>
+      <input type="file" id="file" (change)="onFileSelected($event)" name="image" ngModel #fileInput="ngModel" required>
+      <!-- Error message for required validation -->
+      <div *ngIf="fileInput.invalid && (fileInput.dirty || fileInput.touched)" class="text-danger">
+        <div *ngIf="fileInput.errors?.['required']">Field is empty, please choose an image.</div>
+      </div>
+    </div>  
+    <br><br>
+    <button type="submit" [disabled]="!imageForm.form.valid" style=" height: 15%; width: 20%;">Upload</button><br><br><br><br><br><br>
+  </form>
+  <div *ngIf="showSuccessMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
+

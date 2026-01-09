@@ -1,0 +1,20 @@
+/* .gradient-custom-3 {
+   
+    background: #486949;
+    
+   
+    background: -webkit-linear-gradient(to right, rgba(75, 114, 87, 0.5), rgba(110, 147, 165, 0.5));
+    
+  
+    background: linear-gradient(to right, rgba(99, 145, 117, 0.5), rgba(86, 111, 124, 0.5))
+    }*/
+    .gradient-custom-4 {
+
+    background: #3a5c46;
+    
+
+    background: -webkit-linear-gradient(to right, rgb(149, 221, 176), rgb(129, 182, 209));
+    
+
+    background: linear-gradient(to right, rgb(123, 201, 151), rgb(148, 214, 245))
+    } 

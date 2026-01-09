@@ -1,0 +1,94 @@
+
+  
+  <!-- <section class="intro">
+    <div class="container mt-5" *ngIf="tourPackage">
+      <h3 class="text-center">Update Tour Package</h3>
+      <div class="card shadow-2-strong mt-4">
+        <div class="card-body">
+          <form (ngSubmit)="updatePackage()">
+            <div class="mb-3">
+              <label for="packageName" class="form-label">Package Name</label>
+              <input type="text" id="packageName" [(ngModel)]="tourPackage.packageName" name="packageName" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="packagePrice" class="form-label">Package Price</label>
+              <input type="text" id="packagePrice" [(ngModel)]="tourPackage.packagePrice" name="packagePrice" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="packageDescription" class="form-label">Package Description</label>
+              <textarea id="packageDescription" [(ngModel)]="tourPackage.packageDescription" name="packageDescription" class="form-control" required></textarea>
+            </div>
+            
+            <div class="mb-3">
+              <label for="activities" class="form-label">Add Activity</label>
+              <select id="activities" name="activities" class="form-control" [(ngModel)]="selectedActivity">
+                <option *ngFor="let activity of allActivities" [ngValue]="activity">{{activity.activityName}}</option>
+              </select>
+              <button type="button" class="btn btn-success mt-2" (click)="addActivity()">Add Activity</button>
+            </div>
+            
+            <div *ngFor="let activity of tourPackage.activitiesName; let i = index" class="mb-3">
+              <label class="form-label">Activity {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <select [(ngModel)]="activity.activityId" (change)="selectActivity(activity, $event)" name="activityId{{i}}" class="form-control" required>
+                  <option *ngFor="let act of allActivities" [value]="act.activityId">{{act.activityName}}</option>
+                </select>
+                <button type="button" class="btn btn-danger" (click)="removeActivity(i)">Remove</button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Package</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+   -->
+  
+
+
+
+
+   <!-- <br><br><br><br> -->
+   <section class="intro">
+    <div class="container mt-5" *ngIf="tourPackage">
+      <h3 class="text-center">Update Tour Package</h3>
+      <div class="card shadow-2-strong mt-4">
+        <div class="card-body">
+          <form (ngSubmit)="updatePackage()">
+            <div class="mb-3">
+              <label for="packageName" class="form-label">Package Name</label>
+              <input type="text" id="packageName" [(ngModel)]="tourPackage.packageName" name="packageName" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="packagePrice" class="form-label">Package Price</label>
+              <input type="text" id="packagePrice" [(ngModel)]="tourPackage.packagePrice" name="packagePrice" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="packageDescription" class="form-label">Package Description</label>
+              <textarea id="packageDescription" [(ngModel)]="tourPackage.packageDescription" name="packageDescription" class="form-control" required></textarea>
+            </div>
+            
+            <div class="mb-3">
+              <label for="activities" class="form-label">Add Activity</label>
+              <select id="activities" name="activities" class="form-control" [(ngModel)]="selectedActivity">
+                <option *ngFor="let activity of allActivities" [ngValue]="activity">{{activity.activityName}}</option>
+              </select>
+              <button type="button" class="btn btn-success mt-2" (click)="addActivity()">Add Activity</button>
+            </div>
+            
+            <div *ngFor="let activity of tourPackage.activitiesName; let i = index" class="mb-3">
+              <label class="form-label">Activity {{i + 1}}</label>
+              <div class="input-group mb-2">
+                <select [(ngModel)]="activity.activityId" (change)="selectActivity(activity, $event)" name="activityId{{i}}" class="form-control" required>
+                  <option *ngFor="let act of allActivities" [value]="act.activityId">{{act.activityName}}</option>
+                </select>
+                <button type="button" class="btn btn-danger" (click)="removeActivity(i)">Remove</button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Package</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  

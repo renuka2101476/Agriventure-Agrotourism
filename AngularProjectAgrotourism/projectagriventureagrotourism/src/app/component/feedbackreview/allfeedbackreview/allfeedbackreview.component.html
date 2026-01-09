@@ -1,0 +1,57 @@
+
+<br><br>
+  <div class="panel panel-primary" style="border: 3px solid black; margin-left: 2%; margin-right: 2%;">
+    <div class="panel-heading"> 
+      <h2 style="text-align: center;">Feedback & Review List</h2>
+    </div><br>
+    <div style="margin-left: 80%;">
+      <b style="font-size: 12px;">Search here...</b><i class="fa fa-search"></i><br>
+      <input type="text" name="txt" id="txt" placeholder="Enter Name or ID" [(ngModel)]="searchText" (input)="onInputChange()" style="font-size: 15px;">
+    </div>
+    <br><br>
+  
+    <div class="panel-body">
+      <div *ngIf="noData" class="alert alert-warning">
+        Data not Available
+      </div>
+      <table class="table table-striped" *ngIf="!noData">
+        <thead>
+          <tr>
+            <th>Feedback-ID</th>
+            <th>Customer-Name</th>
+            <th>Customer-Email</th>
+            <th>Feedback-Date</th>
+            <th>Rating</th>
+            <th>Agrotourism-Service</th>
+            <th>Comment-Suggestions</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let g of filteredfeedback | async">
+            <td>{{ g.feedbackID }}</td>
+            <td>{{ g.customerName }}</td>
+            <td>{{ g.email }}</td>
+            <td>{{ g.feedbackDate }}</td>
+            <td>{{ g.rating }}</td>
+            <td>{{ g.agrotourismService }}</td>
+            <td>{{ g.commentsuggestions }}</td>
+            
+            <td>
+              <button (click)="deleteFeedback(g.feedbackID)" class="btn btn-danger btn-sm">
+                <i class=" fa fa-trash "> </i>
+              </button>
+              <!--<button (click)="navigateToUpdate(g.guideId)" class="btn btn-primary btn-sm" style="margin-left: 8px;">
+                <i class=" fa fa-edit "> </i>
+              </button>-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><br>
+  </div>
+  
+  
+  
+  

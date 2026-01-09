@@ -1,0 +1,80 @@
+<div class="container mt-5" style="padding-top: 100px;">
+    <div class="row justify-content-center">
+      <div class="col-md-9">
+        <div class="form-container animated">
+          <h2 class="form-header">Feedback</h2>
+          <form #feedbackForm="ngForm" (ngSubmit)="onSubmit()" novalidate> <!-- #feedbackForm to reference the form -->
+            <div class="form-group">
+              <label for="customerName">Customer Name</label>
+              <input type="text" class="form-control" id="customerName" name="customerName" placeholder="Enter your name" [(ngModel)]="feedback.customerName" required>
+              <!-- Validation message -->
+              <div *ngIf="feedbackForm.controls['customerName'].invalid && (feedbackForm.controls['customerName'].dirty || feedbackForm.controls['customerName'].touched)" class="text-danger">
+                Customer Name is required
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" [(ngModel)]="feedback.email" required email> <!-- Added 'email' validation -->
+                <!-- Validation message -->
+                <div *ngIf="feedbackForm.controls['email'].invalid && (feedbackForm.controls['email'].dirty || feedbackForm.controls['email'].touched)" class="text-danger">
+                  Valid Email is required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="feedbackDate">Feedback Date</label>
+                <input type="date" class="form-control" id="feedbackDate" name="feedbackDate" [(ngModel)]="feedback.feedbackDate" required>
+                <!-- Validation message -->
+                <div *ngIf="feedbackForm.controls['feedbackDate'].invalid && (feedbackForm.controls['feedbackDate'].dirty || feedbackForm.controls['feedbackDate'].touched)" class="text-danger">
+                  Feedback Date is required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="agrotourismService">Agrotourism Service</label>
+                <select class="form-control" id="agrotourismService" name="agrotourismService" [(ngModel)]="feedback.agrotourismService" required>
+                  <option value="" disabled selected>Select Service</option>
+                  <option>GOOD</option>
+                  <option>BETTER</option>
+                  <option>BEST</option>
+                </select>
+                <!-- Validation message -->
+                <div *ngIf="feedbackForm.controls['agrotourismService'].invalid && (feedbackForm.controls['agrotourismService'].dirty || feedbackForm.controls['agrotourismService'].touched)" class="text-danger">
+                  Agrotourism Service is required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="rating">Rating</label>
+                <div class="rating">
+                    <span class="star" (click)="setRating(1)" [class.filled]="feedback.rating >= 1">&#9733;</span>
+                    <span class="star" (click)="setRating(2)" [class.filled]="feedback.rating >= 2">&#9733;</span>
+                    <span class="star" (click)="setRating(3)" [class.filled]="feedback.rating >= 3">&#9733;</span>
+                    <span class="star" (click)="setRating(4)" [class.filled]="feedback.rating >= 4">&#9733;</span>
+                    <span class="star" (click)="setRating(5)" [class.filled]="feedback.rating >= 5">&#9733;</span>
+                </div>
+                <input type="hidden" id="rating" name="rating" [(ngModel)]="feedback.rating" required>
+                <div *ngIf="feedbackForm.controls['rating'].invalid && (feedbackForm.controls['rating'].dirty || feedbackForm.controls['rating'].touched)" class="text-danger">
+                    Rating is required
+                </div>
+            </div>
+            
+
+              <div class="form-group">
+                <label for="comment">Comment/Suggestion</label>                                                                                        
+                <textarea class="form-control" id="comment" name="comment" rows="3" placeholder="Enter your comment or suggestion" [(ngModel)]="feedback.commentsuggestions" required></textarea>
+                <!-- Validation message -->
+                <div *ngIf="feedbackForm.controls['comment'].invalid && (feedbackForm.controls['comment'].dirty || feedbackForm.controls['comment'].touched)" class="text-danger">
+                  Comment/Suggestion is required
+                </div>
+              </div>
+            <div class="form-group text-center">
+              <!-- Disabled if form is invalid -->
+              <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">Submit Feedback</button>
+            </div>
+            <!-- Success message displayed after submission -->
+            <div *ngIf="submitted" class="alert alert-success text-center mt-3">
+              Thank you for your precious feedback!
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,73 @@
+.navbar.scrolled {
+    background-color:#4b2d01 !important;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar.scrolled .navbar-nav .nav-link {
+    color: #4adf25; 
+  }
+
+
+  /* .navbar .navbar-nav .nav-link {
+    color: #4adf25; 
+  }*/
+
+  .navbar .navbar-nav .nav-link:hover {
+    color: #31f500; 
+    text-shadow: 2px 2px 2px #000000;
+  }
+   
+  .navbar-nav .nav-link:hover {
+    color:#31f500; /* Text color on hover */
+}
+
+
+ 
+
+
+
+.navbar-brand {
+    font-size: 1.5rem;
+    width: 100px;
+    height: auto;
+  }
+
+  .navbar-brand .brand-logo{
+    margin-left: -60%;
+  }
+   /*.navbar-nav .ml-auto{
+    margin-right: 90%;
+  }
+  .collapse .navbar-collapse{
+    margin-right: 90%;
+  } */
+
+  .navbar-nav .nav-link {
+    padding-left: 10px;
+    color:		rgb(139, 0, 0);
+    text-shadow: #4b2d01;
+    position: relative;
+    font-size: 22px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+  
+
+.navbar-nav .nav-link::before {
+  content: ''; /* Empty content */
+  position: absolute; /* Position relative to the anchor tag */
+  width: 100%; /* Full width */
+  height: 1px; /* Underline thickness */
+  bottom: 0; /* Position at the bottom of the anchor tag */
+  left: 0; /* Align with the left edge of the anchor tag */
+  background-color: #31f500; /* Underline color */
+  visibility: hidden; /* Initially hidden */
+  transform: scaleX(0); /* Initially no width */
+  transition: all 0.3s ease; /* Transition effect */
+}
+
+/* Show underline on hover */
+.navbar-nav .nav-link:hover::before {
+  visibility: visible; /* Show the underline */
+  transform: scaleX(1); /* Full width */
+}

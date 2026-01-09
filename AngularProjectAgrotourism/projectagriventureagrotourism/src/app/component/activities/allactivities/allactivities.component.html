@@ -1,0 +1,80 @@
+<br>
+  <div class="panel panel-primary" style="text-align: center; border: 3px solid black; margin-left: 6%; margin-right: 6%">
+  <div class="panel-heading"> <br>
+    <h2>Activities List</h2>
+  </div>
+ <div style="margin-left: 75%;">
+    <b style="font-size: 12px;">Search Activity here...</b><i class="fa fa-search"></i><br>
+    <input type="text" name="txt" id="txt" placeholder="Enter Name or ID" [(ngModel)]="searchText" (input)="onInputChange()" style="font-size: 15px;">
+  </div>
+  <br><br>
+  
+  
+  
+    <div class="panel-body">
+      <div *ngIf="noData" class="alert alert-warning">
+        Data not Available
+      </div>
+
+      <table class="table table-striped" *ngIf="!noData" >  <!--*ngIf="!noData"-->
+        <thead>
+          <tr>
+            <th>Activity-ID</th>
+            <th>Activity-Name</th>
+            <th>Activity-Description</th>
+            <th>Activity-Image</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <!--<tr *ngFor="let g of activity | async">-->
+            <tr *ngFor="let g of filteredActivity | async">
+              <td>{{ g.activityId }}</td>
+              <td>{{ g.activityName }}</td>
+              <td>{{ g.activityDescription }}</td>
+              <td>
+                <img [src]="'data:image/jpeg;base64,' + g.image" alt="{{ g.activityName }}" style="max-width: 200px; max-height: 200px;">
+              </td>
+              <!--<td>
+                <img *ngIf="g.image" [src]="g.image" alt="Activity Image" style="max-width: 40px; max-height: 40px;">
+                <span *ngIf="!g.image">No Image Available</span>
+              </td>-->
+              <td>
+                <button (click)="deleteActivity(g.activityId)" class="btn btn-danger btn-sm" style="margin-top: 30px; margin-left: 10px;">
+                  <i class="fa fa-trash"></i>
+                </button><br>
+                <button (click)="navigateToUpdate(g.activityId)" class="btn btn-primary btn-sm" style="margin-top: 15px; margin-left: 10px;">
+                  <i class="fa fa-edit"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table><br>
+    </div>
+  </div><br><br>
+
+          
+        <!--<tbody>
+          <tr *ngFor="let g of filteredActivity | async">
+            <td>{{ g.activityId }}</td>
+            <td>{{ g.activityName }}</td>
+            <td>{{ g.activityDescription }}</td>
+            <td>{{ g.image }}</td>
+            <td>
+              <button (click)="deleteActivity(g.activityId)" class="btn btn-danger btn-sm">
+                <i class="fa fa-trash"></i>
+              </button>
+              <button (click)="navigateToUpdate(g.activityId)" class="btn btn-primary btn-sm">
+                <i class="fa fa-edit"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>-->
+  
+  
+  
+  

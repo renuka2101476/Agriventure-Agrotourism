@@ -1,0 +1,50 @@
+
+
+<br><br>
+<div class="container" style=" margin-left: 10%; margin-right: 10%; border: 3px solid black;">
+  <br><h1 style="text-align: center;">Update Activity Details</h1><br>
+  <form (ngSubmit)="onSubmit()" [formGroup]="activityForm">
+    <div class="form-group">
+      <label for="id">Activity ID</label>
+      <label id="id" class="form-control">{{ activityForm.get('activityId')?.value }}</label>
+    </div>
+
+    <div class="form-group">
+      <label for="actName">Activity Name</label>
+      <label id="actName" class="form-control">{{ activityForm.get('activityName')?.value }}</label>
+    </div>
+
+    <div class="form-group">
+      <label for="actDescription">Activity Description</label>
+      <textarea id="actDescription" formControlName="activityDescription" class="form-control" required></textarea>
+      <div *ngIf="activityForm.get('activityDescription')?.invalid && (activityForm.get('activityDescription')?.dirty || activityForm.get('activityDescription')?.touched)" class="text-danger">
+        <div *ngIf="activityForm.get('activityDescription')?.errors?.['required']">
+          Activity Description is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="imageData">Image</label>
+      <input type="file" id="file" (change)="onFileSelected($event)" formControlName="image" required>
+      <div *ngIf="activityForm.get('image')?.invalid && (activityForm.get('image')?.dirty || activityForm.get('image')?.touched)" class="text-danger">
+        <div *ngIf="activityForm.get('image')?.errors?.['required']">Activity Image is required, please choose one image.</div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!activityForm.valid" style="height: 15%; width: 20%;">Update</button>
+  </form>
+  <div *ngIf="showSuccessMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="showErrorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div><br><br>
+</div>
+
+
+
+
+
+
+    
